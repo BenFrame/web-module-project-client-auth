@@ -35,9 +35,9 @@ function App() {
       </ul> */}
       <Routes>
         <Route path= '/login' element={<Login push={navigate} />}/>
-        <Route path= '/' element= {<Login/>}/>
+        <Route path= '/' element= {<Login push={navigate} />}/>
         {/* { PrivateRoute( { component: <Friends />, path: '/friends'} ) } */}
-        <PrivateRoute exact path='/friends' component={Friends}/> 
+        <Route path='/friends' element={<PrivateRoute><Friends/></PrivateRoute> }/>
         <Route path= '/logout' element= {<Logout/>}/>
         <Route path= '/friends/add' element= {<AddFriend/>}/>
       </Routes>
